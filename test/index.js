@@ -17,13 +17,13 @@ describe('Create new property list', function () {
 				title: 'Foo',
 				description: 'Foo description',
 				url: 'http://example.com/foo',
-				dateAdded: new Date(2016, 1, 1, 3, 4, 5, 6)
+				dateAdded: new Date('2016-02-01T02:04:05.006Z')
 			},
 			{
 				title: 'Bar',
 				description: 'Bar description',
 				url: 'http://example.com/bar',
-				dateAdded: new Date(2016, 1, 2, 3, 4, 5, 6)
+				dateAdded: new Date('2016-02-02T02:04:05.006Z')
 			}
 		])
 			.then(function () {
@@ -49,13 +49,13 @@ describe('Resuse existing property list', function () {
 				title: 'Foo',
 				description: 'Foo description',
 				url: 'http://example.com/foo',
-				dateAdded: new Date(2016, 1, 1, 3, 4, 5, 6)
+				dateAdded: new Date('2016-02-01T02:04:05.006Z')
 			},
 			{
 				title: 'Bar',
 				description: 'Bar description',
 				url: 'http://example.com/bar',
-				dateAdded: new Date(2016, 1, 2, 3, 4, 5, 6)
+				dateAdded: new Date('2016-02-02T02:04:05.006Z')
 			}
 		])
 			.then(function () {
