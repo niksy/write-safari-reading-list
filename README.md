@@ -40,7 +40,7 @@ writeList('./Bookmarks.plist', [
 
 Returns: `Promise`
 
-Writes property list to file with provided data. If property list exists at the path it reuses it, otherwise uses basic template for generating Bookmarks.plist file.
+Writes property list to file with provided data. If property list exists at the path it reuses it, otherwise uses basic template for generating property list file.
 
 #### filePath
 
