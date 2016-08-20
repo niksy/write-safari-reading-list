@@ -45,8 +45,7 @@ Writes property list to file with provided data. If property list exists at the 
 #### filePath
 
 Type: `String`  
-Default: `~/Library/Safari/Bookmarks.plist`  
-**Required**
+Default: `~/Library/Safari/Bookmarks.plist`
 
 Path to property list.
 

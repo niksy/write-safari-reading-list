@@ -21,7 +21,14 @@ var template = {
  */
 module.exports = function ( fp, data ) {
 
-	var resolvedFp = untildify(path.resolve(fp) || READING_LIST_FILE);
+	var resolvedFp;
+
+	if ( typeof fp !== 'string' ) {
+		resolvedFp = untildify(READING_LIST_FILE);
+		data = fp;
+	} else {
+		resolvedFp = untildify(path.resolve(fp));
+	}
 
 	return pify(plist.readFile)(resolvedFp)
 		.catch(function () {
