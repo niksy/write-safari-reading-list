@@ -23,7 +23,9 @@ module.exports = function ( fp, data ) {
 
 	var resolvedFp;
 
-	if ( typeof fp !== 'string' ) {
+	if ( typeof fp === 'undefined' ) {
+		resolvedFp = untildify(READING_LIST_FILE);
+	} else if ( Array.isArray(fp) ) {
 		resolvedFp = untildify(READING_LIST_FILE);
 		data = fp;
 	} else {

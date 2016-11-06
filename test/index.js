@@ -83,8 +83,9 @@ describe('Use default Reading List property list', function () {
 				return path.resolve('./test/fixtures/links.plist');
 			}
 		});
+		var fp;
 
-		return pfn([
+		var p1 = pfn([
 			{
 				title: 'Foo',
 				description: 'Foo description',
@@ -107,6 +108,32 @@ describe('Use default Reading List property list', function () {
 			.then(function ( res ) {
 				assert.deepEqual(res[0], res[1]);
 			});
+
+		var p2 = pfn(fp, [
+			{
+				title: 'Foo',
+				description: 'Foo description',
+				url: 'http://example.com/foo',
+				dateAdded: new Date('2016-02-01T02:04:05.006Z')
+			},
+			{
+				title: 'Bar',
+				description: 'Bar description',
+				url: 'http://example.com/bar',
+				dateAdded: new Date('2016-02-02T02:04:05.006Z')
+			}
+		])
+			.then(function () {
+				return Promise.all([
+					pify(plist.readFile)('./test/fixtures/links.plist'),
+					pify(plist.readFile)('./test/fixtures/links.expected.plist')
+				]);
+			})
+			.then(function ( res ) {
+				assert.deepEqual(res[0], res[1]);
+			});
+
+		return Promise.all([p1, p2]);
 
 	});
 
